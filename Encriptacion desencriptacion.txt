@@ -1,0 +1,76 @@
+Manuel Venegas-David Campos-Diego Valdés Arellano-Cristobal Pino-Thomas Orellana
+Usuario: Dvaldes03
+
+Cifrado simetrico: un mensaje cifrado con una llave "x" se puede descifrar con la misma llave "x". Si la llave "x" se filtra para alguien ajeno al receptor o emisor del mensaje, entonces se puede descifrar el mensaje.
+Cifrado asimetrico: el mensaje se cifra con una llave "x" pero se puede descifrar con una llave "y" distinta a la usada para cifrar el mensaje original. El receptor posee kPub (llave publica) y kPrv (llave privada), la kPrv la tiene el receptor y el mensaje cifrado con kPub solo se puede descifrar con kPrv
+Cifrado Hibrido:
+El cifrado usado es simetrico (da origen al asimetrico e hibrido)
+1)
+K<-E=-6
+X<-R=-6
+O<-I=-6
+I<-C=-6
+F<- =6
+R<-L=-6
+O<-I=-6
+R<-L=-6
+R<-L=-6
+U<-O=-6
+
+HOLA
+NURG
+
+Para encriptar es avanzar 6 letras, desencriptar es retroceder 6 letras, considerando "espacio" como una letra.
+El codigo usado fue avanzar 6 posiciones en el abecedario a partir de la letra usada.
+
+2)
+O<-E=10
+A<-R=10
+S<-I=10
+M<-C=10
+J<- =10
+V<-L=10
+S<-I=10
+V<-L=10
+V<-L=10
+Y<-O=10
+
+HOLA
+RYVK
+Encriptar es avanzar 10 letras (contado el espacio), desencriptar es retroceder 10 letras.
+
+Como se usa la encriptacion simetrica, la llave es la misma para encriptar y desencriptar.
+
+3)
+B<-E=3
+O<-R=3
+F<-I=3
+ <-C=3
+X<- =3
+I<-L=3
+F<-I=3
+I<-L=3
+I<-L=3
+L<-O=3
+
+Encriptar retrocediendo 3 y avanzando 3 para desencriptar
+
+HOLA
+ELIY
+
+4)
+ <-E=5
+M<-R=5
+D<-I=5
+Y<-C=5
+V<- =5
+G<-L=5
+D<-I=5
+G<-L=5
+G<-L=5
+J<-O=5
+
+Se encripta retrociendo 5, y se desencripta avanzando 5
+
+HOLA
+CJGW

@@ -1,6 +1,6 @@
 Algoritmo Encriptacion_Segunda_Mundial
 	//Diego Valdés Arellano, David Campos, Manuel Venegas, Cristobal Pino, Thomas Orellana
-	Definir firma,abecedario,firma_encriptada,mensaje Como Caracter
+	Definir firma,abecedario,firma_encriptada,mensaje,desencriptado Como Caracter
 	Definir casos,lineas,contador,llave Como Entero
 	//Se define el abecedario a ocupar
 	abecedario<-" ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -15,20 +15,28 @@ Algoritmo Encriptacion_Segunda_Mundial
 		Para i<-6 Hasta 27 Con Paso 1 Hacer
 			Si Subcadena(abecedario,i,i)<>Subcadena(firma_encriptada,1,1) Entonces
 				contador<-contador+1
+				Si i==27 Entonces
+					i<-1
+				FinSi
 			Sino
 				i<-27
 			FinSi
 		FinPara
 		Escribir contador
 		Escribir "Ingresar cantidad de lineas a desencriptar"
+		Leer lineas
 		Si lineas>=3 y lineas<=10 Entonces
-			Leer lineas
 			Para i<-1 Hasta lineas con paso 1 Hacer
 				Escribir "Ingresar linea ",i
 				Leer mensaje
-				Para j<-1 Hasta Longitud(mensaje) Con Paso 1 Hacer
+				Para j<-Longitud(mensaje) Hasta 1 Con Paso -1 Hacer
+					Escribir Subcadena(abecedario,j-contador,j-contador) Sin Saltar
 				FinPara
+				Escribir " "
 			FinPara
+		SiNo
+			Escribir "Numero fuera del rango aceptado"
 		FinSi
+		contador<-0
 	FinMientras
 FinAlgoritmo
