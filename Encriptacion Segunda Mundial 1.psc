@@ -1,10 +1,11 @@
 Algoritmo Encriptacion_Segunda_Mundial
 	//Diego Valdés Arellano, David Campos, Manuel Venegas, Cristobal Pino, Thomas Orellana
 	Definir firma,abecedario,firma_encriptada,mensaje,desencriptado Como Caracter
-	Definir casos,lineas,contador,llave Como Entero
+	Definir casos,lineas,contador,contador2,llave Como Entero
 	//Se define el abecedario a ocupar
 	abecedario<-" ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	contador<-0
+	contador2<-1
 	firma<-"ERIC LILLO"
 	Escribir "Ingresar cantidad de casos"
 	Leer casos
@@ -13,7 +14,7 @@ Algoritmo Encriptacion_Segunda_Mundial
 		Escribir "Ingresar firma"
 		Leer firma_encriptada
 		Para i<-6 Hasta 27 Con Paso 1 Hacer
-			Si Subcadena(abecedario,i,i)<>Subcadena(firma_encriptada,1,1) Entonces
+			Si Subcadena(abecedario,i,i)<>Subcadena(Mayusculas(firma_encriptada),1,1) Entonces
 				contador<-contador+1
 				Si i==27 Entonces
 					i<-1
@@ -29,9 +30,15 @@ Algoritmo Encriptacion_Segunda_Mundial
 			Para i<-1 Hasta lineas con paso 1 Hacer
 				Escribir "Ingresar linea ",i
 				Leer mensaje
-				Para j<-Longitud(mensaje) Hasta 1 Con Paso -1 Hacer
-					Escribir Subcadena(abecedario,j-contador,j-contador) Sin Saltar
-				FinPara
+				Mientras contador2<=Longitud(mensaje) hacer
+					Para j<-1 Hasta 27 Con Paso 1 Hacer
+						Si Subcadena(mensaje,contador2,contador2)<>Subcadena(abecedario,j,j) Entonces
+							Escribir Subcadena(abecedario,j-contador,j-contador) Sin Saltar
+							j<-27
+						FinSi
+					FinPara
+					contador2<-contador2+1
+				FinMientras
 				Escribir " "
 			FinPara
 		SiNo
