@@ -32,13 +32,23 @@ Algoritmo Encriptacion_Segunda_Mundial
 				Leer mensaje
 				Mientras contador2<=Longitud(mensaje) hacer
 					Para j<-1 Hasta 27 Con Paso 1 Hacer
-						Si Subcadena(mensaje,contador2,contador2)<>Subcadena(abecedario,j,j) Entonces
-							Escribir Subcadena(abecedario,j-contador,j-contador) Sin Saltar
-							j<-27
+						Si Subcadena(mensaje,contador2,contador2)==Subcadena(abecedario,j,j) Entonces
+							Si (j-contador)<0 Entonces
+								Escribir Subcadena(abecedario,27-(contador-j),27-(contador-j)) sin saltar
+								j<-27
+							SiNo
+								Si Subcadena(abecedario,j,j)==" " Entonces
+									Escribir Subcadena(abecedario,28-contador,28-contador) Sin Saltar
+									j<-27
+								FinSi
+								Escribir Subcadena(abecedario,j-contador,j-contador) Sin Saltar
+							FinSi
 						FinSi
 					FinPara
+					j<-1
 					contador2<-contador2+1
 				FinMientras
+				contador2<-1
 				Escribir " "
 			FinPara
 		SiNo
